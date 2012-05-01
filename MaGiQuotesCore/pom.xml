@@ -1,0 +1,105 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.magi</groupId>
+    <artifactId>MaGiQuotesCore</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <parent>
+        <groupId>org.magi</groupId>
+        <artifactId>MaGiQuotes</artifactId>
+        <version>1.0</version>
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.glassfish.main.extras</groupId>
+            <artifactId>glassfish-embedded-all</artifactId>
+            <version>3.1.2</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.arquillian.junit</groupId>
+            <artifactId>arquillian-junit-container</artifactId>
+            <version>1.0.0.CR8</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>1.9.0</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <profiles>
+    <profile>
+        <id>arquillian-glassfish-embedded</id>
+        <activation>
+            <activeByDefault>false</activeByDefault>
+        </activation>
+        <dependencies>
+            <dependency>
+                <groupId>org.glassfish.main.extras</groupId>
+                <artifactId>glassfish-embedded-all</artifactId>
+                <version>3.1.2</version>
+                <scope>test</scope>
+            </dependency>
+	        <dependency>
+	            <groupId>org.glassfish.main.javaee-api</groupId>
+	            <artifactId>javax.annotation</artifactId>
+	            <version>3.1.2</version>
+	            <scope>test</scope>
+	        </dependency>
+            <dependency>
+                <groupId>org.jboss.arquillian.container</groupId>
+                <artifactId>arquillian-glassfish-embedded-3.1</artifactId>
+                <version>1.0.0.CR3</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+        <build>
+            <testResources>
+                <testResource>
+                    <directory>src/test/resources</directory>
+                </testResource>
+                <testResource>
+                    <directory>src/test/resources-glassfish-embedded</directory>
+                </testResource>
+            </testResources>
+        </build>
+    </profile>
+    </profiles>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <!-- Adds directories from the local Maven repo containing certain internal 
+                        Glassfish dependencies, as endorsed directories for the Oracle/Sun JDK. This 
+                        will ensure that the warning "Incorrect @Resource annotation class definition 
+                        - missing lookup attribute" is not thrown by embedded Glassfish, as the JARs 
+                        in this endorsed dir have the Resource class required by embedded Glassfish. -->
+                    <argLine>-Djava.endorsed.dirs=${settings.localRepository}/org/glassfish/main/javaee-api/javax.annotation/3.1.2/</argLine>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.12</version>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

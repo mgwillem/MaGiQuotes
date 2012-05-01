@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <h:body>
+        <ui:composition template="../../../layout/simpleTemplate.xhtml">
+
+            <ui:define name="top">
+                Configuration
+            </ui:define>
+
+            <ui:define name="content">
+                        
+                <h:form prependId="false" id="gblForm">
+                    <p:dataTable id="auditPnl" var="item" value="#{configurationViewBean.model}" style="margin:5px;"
+                                 paginatorPosition="bottom" paginatorAlwaysVisible="true" paginator="true" rows="15" 
+                                 paginatorTemplate="{FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}" >
+
+                        <p:column>
+                            <f:facet name="header">
+                                Key
+                            </f:facet>
+                            <h:outputText value="#{item.configurationItemType.name}" />
+                        </p:column>
+
+                        <p:column>
+                            <f:facet name="header">
+                                Default value
+                            </f:facet>
+                            <h:outputText value="#{item.defaultValue}" />
+                        </p:column>
+
+                        <p:column>
+                            <f:facet name="header">
+                                Overrided value
+                            </f:facet>
+                            <h:outputText value="#{item.overridedValue}" />
+                        </p:column>
+
+                        <p:column>
+                            <f:facet name="header">
+                                Currently used value
+                            </f:facet>
+                            <h:outputText value="#{item.usedValue}" />
+                        </p:column>
+                        
+                    </p:dataTable>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+
+</html>

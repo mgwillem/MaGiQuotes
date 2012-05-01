@@ -1,0 +1,17 @@
+/* 
+    Author     : MGW
+*/
+
+.ui-input-invalid
+{
+    background-color: #FFBABA;
+    color: #D8000C;
+}
+
+.ui-input-invalid .ui-state-error
+{
+    background-color: #FFBABA !important;
+    color: #D8000C !important;
+}
+
+.ui-input-valid {}
