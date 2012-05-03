@@ -31,7 +31,7 @@ public class JpaUtil
         Field[] fields = entity.getDeclaredFields();
         for (Field field : fields)
         {
-            Column col = (Column)field.getAnnotation(Column.class);
+            Column col = field.getAnnotation(Column.class);
             if (col != null)
             {
                 columnNameList.add(col.name());

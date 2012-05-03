@@ -12,6 +12,7 @@ import javax.faces.model.ListDataModel;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import org.magi.quotes.core.audit.control.Slf4j;
 import org.slf4j.Logger;
 
 import org.magi.quotes.core.configuration.boundary.Configuration;
@@ -26,8 +27,11 @@ import org.magi.quotes.core.configuration.boundary.ConfigurationItemType;
 @RequestScoped
 public class ConfigurationViewBean implements Serializable
 {
-    private @Inject Logger logger;
-    private @Inject Configuration configuration;
+    @Inject @Slf4j
+    private Logger logger;
+
+    @Inject
+    private Configuration configuration;
 
     private ListDataModel<ConfigurationItem> dataModel;
 

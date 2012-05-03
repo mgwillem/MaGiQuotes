@@ -39,9 +39,4 @@ public class Log4jConfigurator
             throw new RuntimeException("Log4j configurator cannot be started", e);
         }
     }
-
-    @PreDestroy
-    protected void shutdown()
-    {
-    }
 }

@@ -14,7 +14,7 @@ public class ProfilerInterceptor
     @Resource(name="PROFILER_ABNORMAL_EXECUTION_TIME")
     private final Long abnormalExecutionTime = 100L;
 
-    @Inject
+    @Inject @Slf4j
     private Logger logger;
 
     @AroundInvoke

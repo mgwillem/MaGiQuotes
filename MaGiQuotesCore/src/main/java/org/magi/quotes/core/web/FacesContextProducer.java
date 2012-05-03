@@ -10,11 +10,11 @@ import javax.faces.context.FacesContext;
  */
 public class FacesContextProducer
 {
-    @Produces @RequestScoped
+    @Produces @RequestScoped @Context
     public FacesContext getFacesContext()
     {
         FacesContext ctx = FacesContext.getCurrentInstance();
-        if (ctx == null) throw new ContextNotActiveException("FacesContext is not active");
+        if (ctx == null) throw new ContextNotActiveException("Context is not active");
         
         return ctx;
     }

@@ -18,7 +18,7 @@ import javax.inject.Inject;
 @RunWith(Arquillian.class)
 public class FacesContextProducerIT {
 
-    @Inject
+    @Inject @Context
     private FacesContext context;
 
     @Deployment

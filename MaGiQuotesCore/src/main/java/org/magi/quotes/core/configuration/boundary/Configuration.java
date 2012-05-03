@@ -1,5 +1,6 @@
 package org.magi.quotes.core.configuration.boundary;
 
+import org.magi.quotes.core.audit.control.Slf4j;
 import org.magi.quotes.core.configuration.control.DummyCustomConfigurationProvider;
 import org.slf4j.Logger;
 
@@ -32,7 +33,7 @@ public class Configuration
     @Inject
     private ConfigurationUtil configurationUtil;
 
-    @Inject
+    @Inject @Slf4j
     private Logger logger;
             
     private Map<ConfigurationItemType, ConfigurationItem> configuration;
@@ -66,6 +67,11 @@ public class Configuration
         return Collections.unmodifiableMap(configuration);
     }
     
+    public Set<String> getUnconfiguredFields()
+    {
+        return Collections.unmodifiableSet(unconfiguredFields);
+    }
+    
     private void mergeWithCustomConfigurationProvider()
     {
         Map<ConfigurationItemType, String> customConfiguration = customConfigurationProvider.getConfiguration();
@@ -86,8 +92,7 @@ public class Configuration
     private String retrieveValue(ConfigurationItemType key)
     {
         ConfigurationItem valueForKey = configuration.get(key);
-        if (valueForKey == null) 
-        {
+        if (valueForKey == null) {
             unconfiguredFields.add(key.getName());
             return null;
         }

@@ -23,7 +23,7 @@ public class ThrowableUtil
     public static boolean isConcurrentModificationCause(Throwable t)
     {
         boolean concurrentModification = findMatchingCause(t, javax.persistence.OptimisticLockException.class);
-        if (concurrentModification == false) t.printStackTrace();
+        if (!concurrentModification) t.printStackTrace();
         
         return concurrentModification;
     }

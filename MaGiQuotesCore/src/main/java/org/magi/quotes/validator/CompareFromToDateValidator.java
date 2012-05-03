@@ -56,9 +56,9 @@ public class CompareFromToDateValidator implements ConstraintValidator<CompareFr
 
     private boolean retrieveProperties(List<Date> propertyValues, Object target)
     {
-        for (int i=0; i < propertyNames.length; i++)
+        for (String propertyName : propertyNames)
         {
-            Date propertyValue = ConstraintValidatorHelper.getPropertyValue(Date.class, propertyNames[i], target);
+            Date propertyValue = ConstraintValidatorHelper.getPropertyValue(Date.class, propertyName, target);
 
             if (propertyValue == null)
             {
@@ -87,8 +87,6 @@ public class CompareFromToDateValidator implements ConstraintValidator<CompareFr
         if (from == null) return true;
         if (to == null) return true;
 
-        if (to.before(from)) return false;
-
-        return true;
+        return (!to.before(from));
     }
 }

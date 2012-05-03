@@ -10,7 +10,7 @@ import org.slf4j.Logger;
  */
 public class LoggerFactory implements Serializable
 {
-    @Produces 
+    @Produces @Slf4j
     protected Logger createLogger(InjectionPoint injectionPoint)
     {
         String name = injectionPoint.getMember().getDeclaringClass().getName();

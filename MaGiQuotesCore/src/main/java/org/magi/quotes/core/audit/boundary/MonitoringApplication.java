@@ -22,16 +22,13 @@ public class MonitoringApplication implements MonitoringApplicationMXBean
     @Inject
     private Configuration configuration;
 
-    private MBeanServer platformBeanServer;
-    private ObjectName objectName;
-    
     @PostConstruct
     protected void register()
     {
         try
         {
-            objectName = new ObjectName(createObjectName());
-            platformBeanServer = ManagementFactory.getPlatformMBeanServer();
+            ObjectName objectName = new ObjectName(createObjectName());
+            MBeanServer platformBeanServer = ManagementFactory.getPlatformMBeanServer();
 
             if (platformBeanServer.isRegistered(objectName)) platformBeanServer.unregisterMBean(objectName);
 

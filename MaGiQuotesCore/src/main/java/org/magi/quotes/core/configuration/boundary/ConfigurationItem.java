@@ -7,10 +7,10 @@ import java.io.Serializable;
  */
 public class ConfigurationItem implements Serializable
 {
-    private ConfigurationItemType configurationItemType;
-    private String defaultValue;
+    private final ConfigurationItemType configurationItemType;
+    private final String defaultValue;
     private String overridedValue;
-    private Class typeClazz;
+    private final Class typeClazz;
 
     public ConfigurationItem(ConfigurationItemType configurationItemType, String defaultValue)
     {
@@ -69,10 +69,8 @@ public class ConfigurationItem implements Serializable
             return false;
         }
         final ConfigurationItem other = (ConfigurationItem) obj;
-        if (this.configurationItemType != other.configurationItemType) {
-            return false;
-        }
-        return true;
+
+        return (this.configurationItemType == other.configurationItemType);
     }
 
     @Override

@@ -10,8 +10,8 @@ public enum ConfigurationItemType implements Serializable
     MONITORING_JMX_ACTIVATED("jmxMonitoringActivated", "Monitoring feature - activate or desactivate the JMX monitoring"),
     MONITORING_CONSOLE_ACTIVATED("consoleMonitoringActivated", "Monitoring feature - activate or desactivate the console monitoring");
 
-    private String name;
-    private String description;
+    private final String name;
+    private final String description;
     
     private ConfigurationItemType(String name, String description)
     {

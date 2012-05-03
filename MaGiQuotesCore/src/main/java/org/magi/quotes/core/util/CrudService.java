@@ -54,13 +54,13 @@ public class CrudService<T>
 
     public T update(T t)
     {
-        return (T)this.em.merge(t);
+        return this.em.merge(t);
     }
 
     @ExcludeClassInterceptors
     public T updateExcludeInterceptors(T t)
     {
-        return (T)this.em.merge(t);
+        return this.em.merge(t);
     }
     
     public List findWithNamedQuery(String namedQueryName)

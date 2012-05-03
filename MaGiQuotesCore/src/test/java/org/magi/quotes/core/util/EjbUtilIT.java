@@ -24,7 +24,7 @@ public class EjbUtilIT
     @Inject
     private CrudService<Object> service;
     
-    private static Long millis = new Date().getTime();
+    private static final Long millis = new Date().getTime();
     
     @Deployment
     public static JavaArchive createTestArchive() 

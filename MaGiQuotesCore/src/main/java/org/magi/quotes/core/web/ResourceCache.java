@@ -35,7 +35,7 @@ public class ResourceCache implements Serializable
     
     public boolean isCached(String resourceUri)
     {
-        for (String resourceCached : resourcesCached.toArray(new String[]{}))
+        for (String resourceCached : resourcesCached.toArray(new String[resourcesCached.size()]))
         {
             if (resourceUri.endsWith(resourceCached)) return true;
         }
