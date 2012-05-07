@@ -3,7 +3,7 @@ package org.magi.quotes.core.configuration.boundary;
 import java.util.Comparator;
 
 /**
- * @author MGW
+ * @author <a href="mailto:mgw@mmx.lu">Marc Gabriel-Willem</a>
  */
 public class ConfigurationItemComparator implements Comparator<ConfigurationItem> 
 {

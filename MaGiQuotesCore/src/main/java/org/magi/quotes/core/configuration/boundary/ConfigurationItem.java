@@ -3,7 +3,7 @@ package org.magi.quotes.core.configuration.boundary;
 import java.io.Serializable;
 
 /**
- * @author MGW
+ * @author <a href="mailto:mgw@mmx.lu">Marc Gabriel-Willem</a>
  */
 public class ConfigurationItem implements Serializable
 {

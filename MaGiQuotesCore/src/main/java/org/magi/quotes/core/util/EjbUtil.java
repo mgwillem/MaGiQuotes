@@ -4,7 +4,7 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
 /**
- * @author MGW
+ * @author <a href="mailto:mgw@mmx.lu">Marc Gabriel-Willem</a>
  */
 public final class EjbUtil 
 {

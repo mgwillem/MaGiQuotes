@@ -17,7 +17,7 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 /**
- * @author MGW
+ * @author <a href="mailto:mgw@mmx.lu">Marc Gabriel-Willem</a>
  */
 @RunWith(MockitoJUnitRunner.class)
 public class ConfigurationUtilTest {

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author MGW
+ * @author <a href="mailto:mgw@mmx.lu">Marc Gabriel-Willem</a>
  */
 public class Query {
     private Long id;

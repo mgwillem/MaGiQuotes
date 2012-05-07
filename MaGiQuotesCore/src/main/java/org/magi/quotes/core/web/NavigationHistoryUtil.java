@@ -1,7 +1,7 @@
 package org.magi.quotes.core.web;
 
 /**
- * @author MGW
+ * @author <a href="mailto:mgw@mmx.lu">Marc Gabriel-Willem</a>
  */
 public class NavigationHistoryUtil 
 {

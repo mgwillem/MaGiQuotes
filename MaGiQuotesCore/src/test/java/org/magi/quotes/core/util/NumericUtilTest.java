@@ -7,7 +7,7 @@ import org.junit.Test;
 import java.math.BigDecimal;
 
 /**
- * @author MGW
+ * @author <a href="mailto:mgw@mmx.lu">Marc Gabriel-Willem</a>
  */
 public class NumericUtilTest {
 

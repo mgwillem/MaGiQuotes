@@ -16,7 +16,7 @@ import java.io.Serializable;
 import java.util.*;
 
 /**
- * @author MGW
+ * @author <a href="mailto:mgw@mmx.lu">Marc Gabriel-Willem</a>
  */
 @Named(value="monitoringViewBean")
 @RequestScoped

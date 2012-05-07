@@ -9,7 +9,7 @@ import javax.persistence.Column;
 import javax.persistence.Table;
 
 /**
- * @author MGW
+ * @author <a href="mailto:mgw@mmx.lu">Marc Gabriel-Willem</a>
  */
 @RequestScoped
 public class JpaUtil 

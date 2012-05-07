@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 import java.text.DecimalFormat;
 
 /**
- * @author MGW
+ * @author <a href="mailto:mgw@mmx.lu">Marc Gabriel-Willem</a>
  */
 @RequestScoped
 public class NumericUtil implements Serializable

@@ -5,7 +5,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 /**
- * @author MGW
+ * @author <a href="mailto:mgw@mmx.lu">Marc Gabriel-Willem</a>
  */
 @PasswordEncryptionType(type=Type.SHA256)
 public class SimplePasswordEncryption implements PasswordEncryption

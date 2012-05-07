@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * @author MGW
+ * @author <a href="mailto:mgw@mmx.lu">Marc Gabriel-Willem</a>
  */
 @WebFilter(filterName="httpResourceCacheFilter", urlPatterns="/*")
 public class HttpResourceCacheFilter implements Filter

@@ -6,7 +6,7 @@ import javax.enterprise.inject.spi.InjectionPoint;
 import org.slf4j.Logger;
 
 /**
- * @author MGW
+ * @author <a href="mailto:mgw@mmx.lu">Marc Gabriel-Willem</a>
  */
 public class LoggerFactory implements Serializable
 {

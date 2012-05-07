@@ -5,7 +5,7 @@ import java.beans.PropertyDescriptor;
 import java.lang.reflect.Method;
 
 /**
- * @author MGW
+ * @author <a href="mailto:mgw@mmx.lu">Marc Gabriel-Willem</a>
  */
 public abstract class ConstraintValidatorHelper
 {

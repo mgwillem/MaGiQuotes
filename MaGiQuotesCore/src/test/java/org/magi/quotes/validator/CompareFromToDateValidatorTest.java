@@ -13,7 +13,7 @@ import java.util.GregorianCalendar;
 import java.util.Set;
 
 /**
- * @author MGW
+ * @author <a href="mailto:mgw@mmx.lu">Marc Gabriel-Willem</a>
  */
 public class CompareFromToDateValidatorTest {
 

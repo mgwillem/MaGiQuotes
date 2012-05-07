@@ -8,7 +8,7 @@ import org.magi.quotes.core.configuration.boundary.ConfigurationItemType;
 import org.magi.quotes.core.configuration.boundary.CustomConfigurationProvider;
 
 /**
- * @author MGW
+ * @author <a href="mailto:mgw@mmx.lu">Marc Gabriel-Willem</a>
  */
 public class DummyCustomConfigurationProvider implements CustomConfigurationProvider {
 

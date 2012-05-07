@@ -1,7 +1,7 @@
 package org.magi.quotes.core.util.password;
 
 /**
- * @author MGW
+ * @author <a href="mailto:mgw@mmx.lu">Marc Gabriel-Willem</a>
  */
 public interface PasswordEncryption
 {

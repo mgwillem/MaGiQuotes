@@ -15,7 +15,7 @@ import java.util.Date;
 import static org.junit.Assert.*;
 
 /**
- * @author MGW
+ * @author <a href="mailto:mgw@mmx.lu">Marc Gabriel-Willem</a>
  */
 @RunWith(Arquillian.class)
 public class ResourceCacheIT

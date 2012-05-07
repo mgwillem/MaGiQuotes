@@ -13,7 +13,7 @@ import javax.naming.NamingException;
 import java.lang.management.ManagementFactory;
 
 /**
- * @author MGW
+ * @author <a href="mailto:mgw@mmx.lu">Marc Gabriel-Willem</a>
  */
 @Singleton
 @Startup

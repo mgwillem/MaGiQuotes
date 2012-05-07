@@ -4,7 +4,7 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 
 /**
- * @author MGW
+ * @author <a href="mailto:mgw@mmx.lu">Marc Gabriel-Willem</a>
  */
 public class AuditEntityListener
 {

@@ -21,7 +21,7 @@ import org.magi.quotes.core.configuration.boundary.ConfigurationItemComparator;
 import org.magi.quotes.core.configuration.boundary.ConfigurationItemType;
 
 /**
- * @author MGW
+ * @author <a href="mailto:mgw@mmx.lu">Marc Gabriel-Willem</a>
  */
 @Named(value="configurationViewBean")
 @RequestScoped

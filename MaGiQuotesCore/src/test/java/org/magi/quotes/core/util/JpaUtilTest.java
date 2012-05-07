@@ -6,7 +6,7 @@ import org.junit.Test;
 import org.magi.quotes.core.audit.entity.EmbeddableAuditColumns;
 
 /**
- * @author MGW
+ * @author <a href="mailto:mgw@mmx.lu">Marc Gabriel-Willem</a>
  */
 public class JpaUtilTest {
     

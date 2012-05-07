@@ -6,7 +6,7 @@ import javax.enterprise.inject.Produces;
 import javax.faces.context.FacesContext;
 
 /**
- * @author MGW
+ * @author <a href="mailto:mgw@mmx.lu">Marc Gabriel-Willem</a>
  */
 public class FacesContextProducer
 {

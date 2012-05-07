@@ -16,7 +16,7 @@ import javax.inject.Inject;
 import java.util.Date;
 
 /**
- * @author MGW
+ * @author <a href="mailto:mgw@mmx.lu">Marc Gabriel-Willem</a>
  */
 @RunWith(Arquillian.class)
 public class EjbUtilIT 

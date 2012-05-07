@@ -9,7 +9,7 @@ import org.apache.log4j.xml.DOMConfigurator;
 import org.slf4j.Logger;
 
 /**
- * @author mgw
+ * @author <a href="mailto:mgw@mmx.lu">Marc Gabriel-Willem</a>
  */
 @Singleton
 @Startup

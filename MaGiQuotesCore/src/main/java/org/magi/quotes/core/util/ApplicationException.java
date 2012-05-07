@@ -4,7 +4,7 @@ import java.util.Set;
 import javax.validation.ConstraintViolation;
 
 /**
- * @author MGW
+ * @author <a href="mailto:mgw@mmx.lu">Marc Gabriel-Willem</a>
  */
 @javax.ejb.ApplicationException(rollback=false)
 public class ApplicationException extends Exception

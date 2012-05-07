@@ -5,9 +5,7 @@ import org.magi.quotes.core.configuration.control.DummyCustomConfigurationProvid
 import org.slf4j.Logger;
 
 import javax.annotation.PostConstruct;
-import javax.ejb.Schedule;
-import javax.ejb.Singleton;
-import javax.ejb.Startup;
+import javax.ejb.*;
 import javax.enterprise.inject.Produces;
 import javax.enterprise.inject.spi.InjectionPoint;
 import javax.inject.Inject;
@@ -19,10 +17,11 @@ import static org.magi.quotes.core.configuration.boundary.ConfigurationItemType.
 import static javax.ws.rs.core.MediaType.TEXT_PLAIN;
 
 /**
- * @author MGW
+ * @author <a href="mailto:mgw@mmx.lu">Marc Gabriel-Willem</a>
  */
 @Startup
 @Singleton
+@Lock(LockType.READ)
 @Path("configuration")
 @javax.ws.rs.Produces(TEXT_PLAIN)
 public class Configuration 
@@ -41,6 +40,7 @@ public class Configuration
     private Long startupTime;
 
     @PostConstruct
+    @Lock(LockType.WRITE)
     public void fetchConfiguration()
     {
         unconfiguredFields = new HashSet<String>();
@@ -131,6 +131,7 @@ public class Configuration
 
     @GET
     @Path("reload")
+    @Lock(LockType.WRITE)
     public String getConfigurationReload()
     {
         fetchConfiguration();

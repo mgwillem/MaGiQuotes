@@ -3,7 +3,7 @@ package org.magi.quotes;
 import java.math.BigDecimal;
 
 /**
- * @author MGW
+ * @author <a href="mailto:mgw@mmx.lu">Marc Gabriel-Willem</a>
  */
 public class Product {
     

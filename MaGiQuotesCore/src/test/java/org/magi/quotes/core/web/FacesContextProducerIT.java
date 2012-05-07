@@ -13,7 +13,7 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
 /**
- * @author MGW
+ * @author <a href="mailto:mgw@mmx.lu">Marc Gabriel-Willem</a>
  */
 @RunWith(Arquillian.class)
 public class FacesContextProducerIT {

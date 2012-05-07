@@ -3,7 +3,7 @@ package org.magi.quotes.core.audit.entity;
 import java.sql.Timestamp;
 
 /**
- * @author MGW
+ * @author <a href="mailto:mgw@mmx.lu">Marc Gabriel-Willem</a>
  */
 public interface AuditColumns
 {

@@ -8,7 +8,7 @@ import javax.validation.ConstraintValidatorContext;
 import javax.validation.ConstraintValidatorContext.ConstraintViolationBuilder;
 
 /**
- * @author MGW
+ * @author <a href="mailto:mgw@mmx.lu">Marc Gabriel-Willem</a>
  */
 public class CompareFromToDateValidator implements ConstraintValidator<CompareFromToDate, Object>
 {
