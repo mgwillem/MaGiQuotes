@@ -1,24 +1,22 @@
 package org.magi.quotes.presentation.core.system;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import org.magi.quotes.core.configuration.boundary.Configuration;
+import org.magi.quotes.core.configuration.boundary.ConfigurationItem;
+import org.magi.quotes.core.configuration.boundary.ConfigurationItemComparator;
+import org.magi.quotes.core.configuration.boundary.ConfigurationItemType;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.model.ListDataModel;
 import javax.inject.Inject;
 import javax.inject.Named;
-
-import org.magi.quotes.core.audit.control.Slf4j;
-import org.slf4j.Logger;
-
-import org.magi.quotes.core.configuration.boundary.Configuration;
-import org.magi.quotes.core.configuration.boundary.ConfigurationItem;
-import org.magi.quotes.core.configuration.boundary.ConfigurationItemComparator;
-import org.magi.quotes.core.configuration.boundary.ConfigurationItemType;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author <a href="mailto:mgw@mmx.lu">Marc Gabriel-Willem</a>
@@ -27,8 +25,7 @@ import org.magi.quotes.core.configuration.boundary.ConfigurationItemType;
 @RequestScoped
 public class ConfigurationViewBean implements Serializable
 {
-    @Inject @Slf4j
-    private Logger logger;
+    private static final Logger logger = LoggerFactory.getLogger(ConfigurationViewBean.class);
 
     @Inject
     private Configuration configuration;

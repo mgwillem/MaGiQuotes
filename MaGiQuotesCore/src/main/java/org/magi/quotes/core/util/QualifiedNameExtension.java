@@ -1,11 +1,11 @@
 package org.magi.quotes.core.util;
 
-import java.lang.reflect.Field;
 import javax.ejb.Stateless;
 import javax.enterprise.event.Observes;
 import javax.enterprise.inject.spi.AnnotatedType;
 import javax.enterprise.inject.spi.Extension;
 import javax.enterprise.inject.spi.ProcessAnnotatedType;
+import java.lang.reflect.Field;
 
 /**
  * @author <a href="mailto:mgw@mmx.lu">Marc Gabriel-Willem</a>

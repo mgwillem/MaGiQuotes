@@ -1,11 +1,11 @@
 package org.magi.quotes.validator;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 import javax.validation.ConstraintValidatorContext.ConstraintViolationBuilder;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 /**
  * @author <a href="mailto:mgw@mmx.lu">Marc Gabriel-Willem</a>

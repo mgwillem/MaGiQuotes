@@ -1,9 +1,9 @@
 package org.magi.quotes.core.audit.entity;
 
-import java.io.Serializable;
-import java.sql.Timestamp;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import java.io.Serializable;
+import java.sql.Timestamp;
 
 /**
  * @author <a href="mailto:mgw@mmx.lu">Marc Gabriel-Willem</a>

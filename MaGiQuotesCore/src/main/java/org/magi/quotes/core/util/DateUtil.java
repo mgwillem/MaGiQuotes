@@ -3,7 +3,6 @@ package org.magi.quotes.core.util;
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import java.io.Serializable;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 

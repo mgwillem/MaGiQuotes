@@ -1,11 +1,12 @@
 package org.magi.quotes.core.web;
 
+import org.primefaces.component.calendar.Calendar;
+
 import javax.faces.component.UIInput;
 import javax.faces.context.FacesContext;
 import javax.faces.event.AbortProcessingException;
 import javax.faces.event.SystemEvent;
 import javax.faces.event.SystemEventListener;
-import org.primefaces.component.calendar.Calendar;
 
 /**
  * @author <a href="mailto:mgw@mmx.lu">Marc Gabriel-Willem</a>

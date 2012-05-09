@@ -1,12 +1,12 @@
 package org.magi.quotes.core.util;
 
+import javax.enterprise.context.RequestScoped;
+import javax.persistence.Column;
+import javax.persistence.Table;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import javax.enterprise.context.RequestScoped;
-import javax.persistence.Column;
-import javax.persistence.Table;
 
 /**
  * @author <a href="mailto:mgw@mmx.lu">Marc Gabriel-Willem</a>

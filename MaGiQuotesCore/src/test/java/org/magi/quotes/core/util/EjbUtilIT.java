@@ -12,6 +12,7 @@ import org.junit.AfterClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import javax.ejb.EJB;
 import javax.inject.Inject;
 import java.util.Date;
 
@@ -21,7 +22,7 @@ import java.util.Date;
 @RunWith(Arquillian.class)
 public class EjbUtilIT 
 {
-    @Inject
+    @EJB
     private CrudService<Object> service;
     
     private static final Long millis = new Date().getTime();

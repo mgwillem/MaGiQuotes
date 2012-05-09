@@ -1,8 +1,7 @@
 package org.magi.quotes.core.configuration.boundary;
 
-import org.magi.quotes.core.audit.control.Slf4j;
-import org.magi.quotes.core.configuration.control.DummyCustomConfigurationProvider;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.*;
@@ -13,8 +12,9 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import java.util.*;
 
-import static org.magi.quotes.core.configuration.boundary.ConfigurationItemType.*;
 import static javax.ws.rs.core.MediaType.TEXT_PLAIN;
+import static org.magi.quotes.core.configuration.boundary.ConfigurationItemType.MONITORING_CONSOLE_ACTIVATED;
+import static org.magi.quotes.core.configuration.boundary.ConfigurationItemType.MONITORING_JMX_ACTIVATED;
 
 /**
  * @author <a href="mailto:mgw@mmx.lu">Marc Gabriel-Willem</a>
@@ -26,15 +26,14 @@ import static javax.ws.rs.core.MediaType.TEXT_PLAIN;
 @javax.ws.rs.Produces(TEXT_PLAIN)
 public class Configuration 
 {
+    private static final Logger logger = LoggerFactory.getLogger(Configuration.class);
+
     @Inject
     private CustomConfigurationProvider customConfigurationProvider;
 
     @Inject
     private ConfigurationUtil configurationUtil;
 
-    @Inject @Slf4j
-    private Logger logger;
-            
     private Map<ConfigurationItemType, ConfigurationItem> configuration;
     private Set<String> unconfiguredFields;
     private Long startupTime;

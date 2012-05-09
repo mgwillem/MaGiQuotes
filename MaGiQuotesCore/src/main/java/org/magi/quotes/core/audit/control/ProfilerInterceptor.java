@@ -1,21 +1,21 @@
 package org.magi.quotes.core.audit.control;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.annotation.Resource;
-import javax.inject.Inject;
 import javax.interceptor.AroundInvoke;
 import javax.interceptor.InvocationContext;
-import org.slf4j.Logger;
 
 /**
  * @author <a href="mailto:mgw@mmx.lu">Marc Gabriel-Willem</a>
  */
 public class ProfilerInterceptor
 {
+    private static final Logger logger = LoggerFactory.getLogger(ProfilerInterceptor.class);
+
     @Resource(name="PROFILER_ABNORMAL_EXECUTION_TIME")
     private final Long abnormalExecutionTime = 100L;
-
-    @Inject @Slf4j
-    private Logger logger;
 
     @AroundInvoke
     public Object profile(InvocationContext context) throws Exception

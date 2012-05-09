@@ -1,7 +1,7 @@
 package org.magi.quotes.core.util;
 
-import java.util.Set;
 import javax.validation.ConstraintViolation;
+import java.util.Set;
 
 /**
  * @author <a href="mailto:mgw@mmx.lu">Marc Gabriel-Willem</a>
