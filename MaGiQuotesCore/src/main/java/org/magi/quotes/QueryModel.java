@@ -1,6 +1,7 @@
 package org.magi.quotes;
 
 import javax.annotation.PostConstruct;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -8,7 +9,7 @@ import java.util.List;
 /**
  * @author <a href="mailto:mgw@mmx.lu">Marc Gabriel-Willem</a>
  */
-public class QueryModel {
+public class QueryModel implements Serializable {
 
     private List<Query> model;
 

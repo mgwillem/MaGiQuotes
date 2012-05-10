@@ -1,12 +1,13 @@
 package org.magi.quotes;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * @author <a href="mailto:mgw@mmx.lu">Marc Gabriel-Willem</a>
  */
-public class Query {
+public class Query implements Serializable {
     private Long id;
     private Long parentId;
     private Product product;
