@@ -4,10 +4,9 @@ import org.magi.quotes.Query;
 import org.magi.quotes.QueryModel;
 import org.magi.quotes.QueryModelType;
 
-import javax.enterprise.context.RequestScoped;
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.SessionScoped;
-import javax.faces.component.html.HtmlInputText;
-import javax.faces.component.html.HtmlOutputText;
+import javax.faces.component.html.HtmlCommandButton;
 import javax.faces.component.html.HtmlPanelGrid;
 import javax.faces.context.FacesContext;
 import javax.faces.event.PhaseId;
@@ -25,53 +24,68 @@ public class QueryWizardBean implements Serializable {
     @Inject @QueryModelType 
     private QueryModel queryModel;
 
+    @Inject
+    private QueryWizardComponentFactory queryWizardComponentFactory;
+
     private transient HtmlPanelGrid wizard;
+    private int wizardIndex;
+
+    @PostConstruct
+    protected void init() {
+        wizardIndex = 0;
+    }
 
     public HtmlPanelGrid getWizard() {
-        loadWizard();
+        if (FacesContext.getCurrentInstance().getCurrentPhaseId() == PhaseId.RENDER_RESPONSE && wizard != null) {
+            loadWizard();
+        }
         return wizard;
     }
 
     public void setWizard(HtmlPanelGrid wizard) {
         this.wizard = wizard;
-        loadWizard();
+        if (FacesContext.getCurrentInstance().getCurrentPhaseId() == PhaseId.RENDER_RESPONSE && wizard != null) {
+            loadWizard();
+        }
     }
 
     private void loadWizard() {
-        if (FacesContext.getCurrentInstance().getCurrentPhaseId() == PhaseId.RENDER_RESPONSE && wizard != null) {
+        System.out.println(":::loadWizard:::");
 
-            wizard.getChildren().clear();
-            wizard.setColumns(1);
+        wizard.getChildren().clear();
+        wizard.setColumns(1);
 
-            for (Query query : queryModel.getModel()) {
+        wizard.getChildren().add(queryWizardComponentFactory.createHtmlOutputText(queryModel.getModel().get(wizardIndex), "lbl-cat-"));
+        wizard.getChildren().add(createOneQuestionGrid(queryModel.getModel().get(wizardIndex)));
+    }
 
-                HtmlOutputText label = new HtmlOutputText();
-                label.setValue(query.getProduct().getDescription());
-                label.setTransient(true);
-                label.setId("lbl-cat-" + query.getId());
-                wizard.getChildren().add(label);
+    private HtmlPanelGrid createOneQuestionGrid(Query query) {
+        HtmlPanelGrid grid = queryWizardComponentFactory.createHtmlPanelGrid(query, "grid-", 4, "margin-left:20px");
 
-                HtmlPanelGrid grid = new HtmlPanelGrid();
-                grid.setColumns(2);
-                grid.setStyle("margin-left:20px");
-                grid.setId("grid-" + query.getId());
-                wizard.getChildren().add(grid);
+        for (Query queryItem : query.getQueries()) {
+            grid.getChildren().add(queryWizardComponentFactory.createHtmlOutputText(queryItem, "lbl-item"));
+            grid.getChildren().add(queryWizardComponentFactory.createHtmlInputText(queryItem, "inp-", 10));
+            grid.getChildren().add(queryWizardComponentFactory.createWatermark(queryItem, "wat-", "inp-"));
 
-                for (Query queryItem : query.getQueries()) {
-                    HtmlOutputText labelItem = new HtmlOutputText();
-                    labelItem.setValue(queryItem.getProduct().getDescription());
-                    labelItem.setTransient(true);
-                    labelItem.setId("lbl-item-" + queryItem.getId());
+            HtmlCommandButton button = queryWizardComponentFactory.createHtmlCommandButton(queryItem, "cbutton-", "Add");
+            grid.getChildren().add(button);
 
-                    HtmlInputText inputItem = new HtmlInputText();
-                    ((HtmlInputText)inputItem).setSize(10);
-                    inputItem.setTransient(true);
-                    inputItem.setId("inp-" + queryItem.getId());
-
-                    grid.getChildren().add(labelItem);
-                    grid.getChildren().add(inputItem);
-                }
-            }
+            button.setActionExpression(
+                    FacesContext.getCurrentInstance().getApplication().getExpressionFactory().createMethodExpression(
+                            FacesContext.getCurrentInstance().getELContext(), "#{queryWizardBean.next}", String.class, new Class[0]));
         }
+
+        return grid;
+    }
+
+    public String next() {
+        System.out.println(":::next:::");
+
+        wizardIndex ++;
+        if (wizardIndex < queryModel.getModel().size()) {
+            loadWizard();
+        }
+
+        return null;
     }
 }
